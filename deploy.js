@@ -27,7 +27,7 @@ let contract = web3.eth.contract(abi);
 
 console.log('deploying. You might need to enter the account password in the parity UI: http://localhost:8180');
 
-let oracleAddress = '0xa4c34df385f4b70ef3f8fc5eef1fc25cf836ffc0';
+let oracleAddress = '0x21aB0B3527326dcA4467245654Cf881F5F7a8c5e';
 contract.new(42, oracleAddress, {from: deployAccount, data: '0x' + contractData.bytecode}, function(err, deployedContract) {
   if(err) {
     console.log('failed to deploy');
@@ -51,6 +51,5 @@ console.log('we try to send some money to the oracle account. You might need to 
 web3.eth.sendTransaction({
   from: deployAccount,
   to: oracleAddress,
-  value: web3.toWei(0.01, 'ether')
+  value: web3.toWei(0.1, 'ether')
 });
-

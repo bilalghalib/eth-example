@@ -62,5 +62,3 @@ contract.setExchangeRate(1000, function(e, response) {
   }
   console.log(response);
 });
-
-
